@@ -1,0 +1,44 @@
+body, html {
+    height: 100%;
+    font-weight: 400;
+    background-color: $dark-grey; 
+}
+
+header {
+    height: $header-height;
+}
+
+nav {
+    z-index: 99;
+    height: $header-height;
+}
+
+main {
+    background-color: $sec-light-color;
+    padding-bottom: 5em; 
+    min-height: 10em;
+}
+
+footer {
+    background-color: $dark-grey;     
+    color: $light-grey;
+    padding: 3em 0; 
+}
+
+/* this is a pseudo-footer used at the end listings on search page */
+.fixed-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right:1em;
+    margin: 0;    
+    background-color: $dark-grey;
+    color: $light-grey;
+    padding: 1em;
+    min-height: 3em;
+    opacity: .9;
+}
+
+.fixed-footer-h {
+    height: 3em;
+}

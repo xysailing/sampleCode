@@ -1,0 +1,53 @@
+{ 
+    "ptypeTxtVal" : [
+        { "text": "detached", "value": "1" },
+        { "text": "semi-attached", "value": "2" },
+        { "text": "attached", "value": "3" }
+    ],
+
+    "nobedTxtVal" :  [
+        { "text": "1+", "value": "1p" },
+        { "text": "2+", "value": "2p" },
+        { "text": "3+", "value": "3p" },
+        { "text": "4+", "value": "4p" },
+        { "text": "5+", "value": "5p" }
+    ],
+
+    "nobathTxtVal" :  [
+        { "text": "1+", "value": "1p" },
+        { "text": "2+", "value": "2p" },
+        { "text": "3+", "value": "3p" },
+        { "text": "4+", "value": "4p" },
+        { "text": "5+", "value": "5p" }
+    ],
+
+    "lpriceTxtVal" :  [
+        { "text": "any", "value": "0" },
+        { "text": "$300k", "value": "300000" },
+        { "text": "$400k", "value": "400000" },
+        { "text": "$500k", "value": "500000" },
+        { "text": "$600k", "value": "600000" },
+        { "text": "$800k", "value": "800000" },
+        { "text": "$1 Million", "value": "1000000" },
+        { "text": "$1.5 Million", "value": "1500000" },
+        { "text": "$2 Million", "value": "2000000" },
+        { "text": "$3 Million", "value": "3000000" },
+        { "text": "$4 Million", "value": "4000000" },
+        { "text": "$5 Million", "value": "5000000" }
+    ],
+
+    "upriceTxtVal" :  [
+        { "text": "$300k", "value": "300000" },
+        { "text": "$400k", "value": "400000" },
+        { "text": "$500k", "value": "500000" },
+        { "text": "$600k", "value": "600000" },
+        { "text": "$800k", "value": "800000" },
+        { "text": "$1 Million", "value": "1000000" },
+        { "text": "$1.5 Million", "value": "1500000" },
+        { "text": "$2 Million", "value": "2000000" },
+        { "text": "$3 Million", "value": "3000000" },
+        { "text": "$4 Million", "value": "4000000" },
+        { "text": "$5 Million", "value": "5000000" },
+        { "text": "any", "value": "100000000" }
+    ]
+}  

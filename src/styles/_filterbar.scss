@@ -1,0 +1,109 @@
+/* FILTERBAR */
+
+/* TODO : MOBILE */
+
+#filterbar {
+    input[type="radio"], input[type="checkbox"] {
+        margin: 0 7px;
+    }
+    ul {
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 0;
+        li {
+            cursor: pointer;
+            &:hover {
+                background-color: $light-grey;
+            }
+        }
+    }
+    .list-group-item-input {
+        &:hover {
+            background-color: $white;
+        }
+    }    
+    .btn-default { 
+        background-color: $sec-light-color;
+        color: $sec-dark-color;
+        border: 1px solid darken($sec-light-color, 15%);
+        border-radius: 0;
+        width: 100%;
+        text-align: left;
+        height: $filterbar-height;
+        transition: background-color .5s, border .5s;
+        &:hover {
+            background-color: darken($sec-light-color, 8%);
+            border: 1px solid darken($sec-light-color, 20%);    
+            .glyphicon {
+                color: $dark-badge;
+            }        
+        }
+    }
+    .btn-sm {
+        font-size: 12px;
+    }
+    .dropdown-menu {
+        min-width: 100%;
+        padding: 0;
+        margin: 0;        
+        &>li>a {
+            padding: 3px 10px;
+        }
+    } 
+    .search-padding {
+        padding-top: .7em
+    }
+}
+
+.filterbarContainer{
+    padding: 0;
+    background-color: $white;
+    height: $filterbar-height;
+    border-bottom: 1px $light-grey solid;
+}
+
+.color-coded {
+	width: 14px;
+	height: 14px;
+	border-radius: 7px;
+    margin-top: 14px;
+    float: right;   
+    &.condo {
+        background: #72c1db;
+    }
+    &.townhouse {
+        background: #EFB553;    
+    }
+    &.house { 
+        background-color: #95A231;    
+    } 
+    &.other { 
+        background-color:$light-grey;   
+    }       
+}
+
+.filter-button {
+    padding: inherit 2em;
+}
+
+.ui-button-text-padding {
+    padding: .5em 1em .5em .2em;
+}
+
+.btn-sm-padding {
+    padding: .6em 2em;
+}
+
+#ptype {
+    & .no-TB-pad {
+        padding: 0 15px;
+        cursor: default;
+    }
+    & label {
+        padding: 11px 10px 11px 0px;
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+}

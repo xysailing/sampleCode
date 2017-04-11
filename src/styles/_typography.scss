@@ -1,0 +1,46 @@
+h1, h2 {
+    color: $sec-dark-color ;
+}
+
+h3, h4, h5, h6 {
+    color: $grey;
+}
+
+h1 { 
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+        font-size: 2.3em;
+    }
+    @media (max-width: $mobile) {
+        font-size: 1.9em;
+    } 
+}
+
+h2 { 
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+        font-size: 1.8em;
+    }
+    @media (max-width: $mobile) {
+        font-size: 1.6em;
+    } 
+}
+
+h3 { 
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+        font-size: 1.4em;
+    }
+    @media (max-width: $mobile) {
+        font-size: 1.35em;
+    } 
+}
+
+.bold-font {
+    font-weight: 700;
+}
+
+.small-font {
+    font-size: .9em;
+}
+ 
+.font14em {
+    font-size: 1.4em;
+}

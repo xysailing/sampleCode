@@ -1,0 +1,144 @@
+@import "variables.scss";
+@import "tags.scss";
+@import "overwrite.bootstrap.scss";
+@import "typography.scss";
+@import "filterbar.scss";
+@import "experiment.scss";
+
+// IDs //
+
+#map-list-container {
+    position: absolute;
+    width: 100%;
+    top: $header-height + $filterbar-height;
+    bottom: 0;
+    margin: 0;
+    background-color: $white;
+}
+
+#map {
+    height: 100%;
+    background-color:$grey;
+    margin: 0;
+    padding: 0;
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+        /* TODO */
+    }
+    @media (max-width: $mobile) {
+        /* TODO */
+    }  
+}
+
+#re-listing {
+    max-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 1em;
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+        /* TODO */
+    }
+    @media (max-width: $mobile) {
+        /* TODO */
+    }    
+}
+
+/* CLASSES */
+
+.fill {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mainImage {
+    width:100%;
+    height:40em;
+    background: no-repeat scroll center center transparent;
+    background-size: cover;
+    position:relative;
+    margin-bottom: 3em;
+
+    @media (min-width: $desktop) {
+            background-image: url(../images/bg_lrg.jpg) ; 
+    }
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+            height:22em;
+            background-image: url(../images/bg_md.jpg) ; 
+    }
+    @media (max-width: $mobile) {
+            background-image: none;
+            background-color: $sec-light-color;
+            height: auto;
+            margin-bottom: 0;
+    }  
+}
+
+.whiteBox {
+    padding: 2em 2em 4em 2em;
+    text-align: center;
+    background: rgba(255,255,255,.8);
+    max-width: 600px;
+    margin: auto;
+    @media (min-width: $desktop) {
+        margin: 11em auto 0;
+    }
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+        margin: 5em auto 0;
+    }
+    @media (max-width: $mobile) {
+        margin: 2em 0 0 0;
+        padding: 1em 1em 3em 1em;
+        background-color: $white;
+        box-shadow: $bx-shdw;
+    }      
+}
+
+.XLicon {
+    font-size: 4em;
+    color: $light-grey;
+    padding: .5em 0;
+    @media (max-width: $tablet-max) and (min-width: $tablet-min) {
+        font-size: 3.5em;
+    }
+    @media (max-width: $mobile) {
+        font-size: 2.7em;
+    }     
+}
+
+.MDicon {
+    font-size: 1.5em;
+    padding: .5em;
+    opacity: .7;
+}
+
+.maxReb {
+    border: 1px solid $light-grey;
+    background-color: $sec-light-color;
+    text-align: center;
+    box-shadow: $bx-shdw;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+/* miscellaneous */
+
+img.tnail {
+    max-width: 100%;
+}
+
+.marg-bot {
+    margin-bottom: .5em;
+}
+
+.padding-right-0 {
+    padding-right: 0;
+}
+
+.small-col-padding {
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+.small-left-col-padding {
+    padding-left: 3px;
+}

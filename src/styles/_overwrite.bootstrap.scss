@@ -1,0 +1,88 @@
+/* NAVIGATION */ 
+
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+#navbar-collapse .navbar-nav {
+    float: right;
+    @media (max-width: $mobile) {
+        float: left;
+    }     
+}
+
+.navbar-default, .navbar-collapse {
+    background-color: $prim-dark-color;
+    border-color: $prim-dark-color;
+    letter-spacing: 2px;
+}
+
+.navbar-default {
+    .navbar-collapse{
+       border-color: darken($prim-dark-color, 10%);
+    }
+    .navbar-nav {
+        &>li>a {
+            color:$sec-light-color;
+        }
+        &>li>a:hover, &>li> a:focus {
+            color: $prim-light-color;
+        }
+    }
+    .navbar-toggle {
+        border-radius: 0;
+        border-color:  $sec-light-color;
+        .icon-bar {
+            background-color: $sec-light-color;
+        }
+        &:hover, &:focus {
+            background-color: darken($prim-dark-color, 10%);
+        }
+    }
+}
+
+/* FORM */
+
+.form-group-sm .form-control {
+    height: 25px;
+    padding: 6px 9px;
+    font-size: 12px;
+    line-height: 1.2;
+    border-radius: 0;
+}
+
+.form-control {
+    border: 1px solid $light-grey;
+    &:focus {
+        border-color: darken($light-grey, 10%);
+    } 
+}
+
+/* OTHERS */
+
+input, button, .form-control, .btn {
+    border-radius: 0;
+}
+
+.btn-primary{
+    background-color: $prim-dark-color;
+    border: none;
+    &:active, &:hover, &:focus {
+        background-color: darken($prim-dark-color, 10%);
+        color: $sec-light-color;
+        box-shadow: none;
+    }
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.btn-group.open .dropdown-toggle {
+    box-shadow: none;
+}

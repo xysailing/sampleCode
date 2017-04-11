@@ -1,0 +1,13 @@
+<rlst-filterbar (onFormValueChange)="FormValChanged()" ></rlst-filterbar>
+
+<article id='map-list-container' class="row">
+
+	<section class='col-sm-9 fill'>
+		<rlst-map [myGMap]="myGMap" class="fill"></rlst-map>
+	</section>
+
+	<section class='col-sm-3 fill padding-right-0'>
+		<rlst-re-listing [myGMap]="myGMap" (onSortBy)="reSort()"></rlst-re-listing>
+	</section>
+	
+</article>

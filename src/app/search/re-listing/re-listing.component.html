@@ -1,0 +1,112 @@
+<article id="re-listing">
+
+	<div class="maxReb">
+		<div>
+			<span class="font14em">Max Rebate: ${{maxRebate}}</span>
+		</div>
+	</div>
+
+	<div id="sortSelector" class="form-group form-control" (change)="onChangeSort($event)">
+
+		<div class='col-sm-6 no-padding centered'>
+			<span class="bold-font small-font">Price: </span>
+
+			<label class="sort-label" data-toggle="tooltip" data-placement="top" title="price: low to high">
+				<input type="radio" name="sortBy" value="1"> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+			</label>
+			<label class="sort-label" data-toggle="tooltip" data-placement="top" title="price: high to low">
+				<input type="radio" name="sortBy" value="2"> <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+			</label>
+		</div>
+
+		<div class='col-sm-6 no-padding centered'>
+			<span class="bold-font small-font">Date: </span>
+
+			<label class="sort-label" data-toggle="tooltip" data-placement="top" title="date posted: most recent first">
+				<input type="radio" name="sortBy" value="3"> <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+			</label>
+			<label class="sort-label" data-toggle="tooltip" data-placement="top" title="date posted: most recent last">
+				<input type="radio" name="sortBy" value="4"> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+			</label>
+		</div>
+
+	</div>
+
+	<ul id="listing-group" class="list-group">
+		<li *ngFor="let relisting of relistings" (click)="onListingClicked(relisting)" (mouseenter)="onListingMouseenter(relisting)"
+		 (mouseleave)="onListingMouseleave()" class="list-group-item" [attr.data-relistingid]="relisting.id">
+			<div class='row'>
+				<div class="col-sm-5">
+					<img class="tnail" [src]="relisting.image">
+				</div>
+				<div class="col-sm-7">
+					<p class="bold-font">Price: ${{relisting.price}}</p>
+					<span [ngSwitch]="relisting.propertyTypeDescription">
+						<span *ngSwitchCase="'1'" class="color-coded house"></span>
+					<span *ngSwitchCase="'2'" class="color-coded townhouse"></span>
+					<span *ngSwitchCase="'3'" class="color-coded condo"></span>
+					<span *ngSwitchDefault class="color-coded other"></span>
+					</span>
+					<p class="bold-font small-font">
+						{{relisting.barea}}, {{relisting.beds}} bd, {{relisting.baths}} bath(s)<br> {{relisting.address}}
+					</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+
+	<div class="fixed-footer-h"></div>
+
+	<div class="fixed-footer">
+		<p>&copy; RealState</p>
+	</div>
+
+</article>
+
+<!-- TODO -->
+<!-- experimenting with using a secondry service -->
+<!-- Use prop-details.component and remove this duplicate html before milestone 1 -->
+<!-- Modal -->
+<div class="modal fade" id="myModalListing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Property Details</h4>
+			</div>
+			<div class="modal-body">
+
+				<div id="myModalListingCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li *ngFor="let img of propDetail.images; let i = index" data-target="#modal-images" [class.active]="i==0"> </li> 
+					</ol>
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div *ngFor="let img of propDetail.images; let i = index" [class.active]="i==0" class="item modal-img">
+							<img src="{{img}}"> <br>
+						</div>
+					</div>
+					<!-- Controls -->
+					<a class="left carousel-control" href="#myModalListingCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myModalListingCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+
+				<h3>Price: ${{propDetail.price}}</h3>
+				<h4>bedrooms: {{propDetail.beds}}, baths: {{propDetail.baths}}, floor area: {{propDetail.barea}}, built: {{propDetail.year}}</h4>
+				<h4>{{propDetail.address}}</h4>
+				<p>{{propDetail.desc}}</p>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

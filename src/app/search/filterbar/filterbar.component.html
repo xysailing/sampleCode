@@ -1,0 +1,114 @@
+<div class="container-fluid filterbarContainer">
+	<div class="container-fluid">
+
+		<article id='filterbar'>
+			<!-- PAC SEARCH INPUT -->
+			<section class="col-sm-3 search-padding">
+				<rlst-gmap-pac></rlst-gmap-pac>
+			</section>
+
+			<!-- FILTER -->
+			<section class="col-sm-9 small-col-padding">
+
+				<form [formGroup]="filterbarForm">
+					<!-- BUTTON GROUP -->
+					<div class="btn-group" role="group">
+
+						<!-- PROPERTY TYPE -->
+						<div id="ptype" class="btn-group dropdown" role="group">
+							<button class="btn btn-default dropdown-toggle  filter-button" type="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="true"> 
+								<span class="ui-button-text ui-button-text-padding">{{labelMaker.ptype}}</span>
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul class="dropdown-menu list-group ">
+								<li *ngFor="let pt of ptypeTxtVal" class="list-group-item small-font no-TB-pad" 
+									(click)="onSelectPtype()">
+									<label>
+										<input type="checkbox" name="ptype" [value]="pt.value" checked /> 
+										{{pt.text}}
+									</label>
+									<span [ngSwitch]="pt.text">
+										<span *ngSwitchCase="'attached'" class="color-coded condo"></span>
+										<span *ngSwitchCase="'semi-attached'" class="color-coded townhouse"></span>
+										<span *ngSwitchCase="'detached'" class="color-coded house"></span>
+										<span *ngSwitchDefault></span>
+									</span>
+								</li>
+							</ul>
+						</div>
+
+						<!-- BEDROOMS -->
+						<div id="nobed" class="btn-group  dropdown" role="group">
+							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> 
+								<span class="ui-button-text ui-button-text-padding">{{labelMaker.nobed}} Bedrooms</span>
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul class="dropdown-menu list-group " aria-labelledby="dropdownMenu">
+								<li *ngFor="let nb of nobedTxtVal" [value]="nb.value" class="list-group-item" 
+									(click)="onSelectBdBa(nb, 'nobed')">
+									{{nb.text}}
+								</li>
+							</ul>
+						</div>
+
+						<!-- BATHROOMS -->
+						<div id="nobath" class="btn-group dropdown" role="group">
+							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> 
+								<span class="ui-button-text ui-button-text-padding">{{labelMaker.nobath}} Bathrooms</span>
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul class="dropdown-menu list-group " aria-labelledby="dropdownMenu">
+								<li *ngFor="let nbth of nobathTxtVal" [value]="nbth.value" class="list-group-item" 
+									(click)="onSelectBdBa(nbth, 'nobath')">
+									{{nbth.text}}
+								</li>
+							</ul>
+						</div>
+
+						<!-- MIN MAX PRICE -->
+						<div id="customToggle" class="btn-group dropdown" role="group">
+							<button class="btn btn-default dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="true" 
+								(click)="customToggle()" > 
+									<span class="ui-button-text">Price: {{labelMaker.lprice}} </span>
+									<span class="ui-button-text ui-button-text-padding">to {{labelMaker.uprice}}</span>
+									<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
+							<ul class="dropdown-menu list-group" aria-labelledby="dropdownMenu">
+								<li class="list-group-item list-group-item-input">
+									<section class="col-sm-6 small-col-padding">
+										<input id="lprice" type="text" 
+											(click)="showPriceList('lprice')" 
+											(keyup.enter)="onEnterPrice('lprice')"
+											class="form-control"
+											formControlName="lprice" autofocus>
+									</section>
+									<section class="col-sm-6 small-col-padding">
+										<input id="uprice" type="text" 
+											(click)="showPriceList('uprice')" 
+											(keyup.enter)="onEnterPrice('uprice')" 
+											class="form-control"
+											formControlName="uprice">
+									</section>
+								</li>
+								<ul *ngIf="showLowPrice" class="list-group ">
+									<li *ngFor="let lp of lpriceTxtVal" [value]="lp.value" class="list-group-item" 
+										(click)="onSelectPrice(lp, 'lprice')">
+										{{lp.text}}
+									</li>
+								</ul>
+								<ul *ngIf="showHighPrice" class="list-group right-align ">
+									<li *ngFor="let up of upriceTxtVal" [value]="up.value" class="list-group-item" 
+										(click)="onSelectPrice(up, 'uprice')">
+										{{up.text}}
+									</li>
+								</ul>
+							</ul>
+						</div>
+					</div>
+
+				</form>
+
+			</section>
+		</article>
+	</div>
+</div>
